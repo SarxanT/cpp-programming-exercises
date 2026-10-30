@@ -1,12 +1,20 @@
 name: C++ build and smoke tests
+
 on:
   push:
   pull_request:
+
+permissions:
+  contents: read
+
 jobs:
   build-and-smoke-test:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - name: Check out source
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
       - name: Compile and execute the examples
         run: bash scripts/check_cpp.sh
