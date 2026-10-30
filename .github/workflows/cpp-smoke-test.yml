@@ -1,0 +1,12 @@
+name: C++ build and smoke tests
+on:
+  push:
+  pull_request:
+jobs:
+  build-and-smoke-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Compile and execute the examples
+        run: bash scripts/check_cpp.sh
