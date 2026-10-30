@@ -1,0 +1,8 @@
+# C++ build artifacts
+*.o
+*.obj
+*.exe
+*.out
+*.app
+build/
+.DS_Store
